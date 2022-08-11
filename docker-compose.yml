@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+ awvs:
+  image: xrsec/awvs
+  restart: always
+  volumes:
+      - ./hosts:/etc/hosts
+      - ./license_info.json:/home/acunetix/.acunetix/data/license/license_info.json
+      - ./wa_data.dat:/home/acunetix/.acunetix/data/license/wa_data.dat
+  ports:
+    - 13443:3443
+  network_mode: "host"
