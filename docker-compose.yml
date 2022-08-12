@@ -5,9 +5,9 @@ services:
   image: xrsec/awvs
   restart: always
   volumes:
-      - ./hosts:/etc/hosts
-      - ./license_info.json:/home/acunetix/.acunetix/data/license/license_info.json
-      - ./wa_data.dat:/home/acunetix/.acunetix/data/license/wa_data.dat
+      - ./hosts:/etc/hosts:ro
+      - ./license_info.json:/home/acunetix/.acunetix/data/license/license_info.json:ro
+      - ./wa_data.dat:/home/acunetix/.acunetix/data/license/wa_data.dat:ro
   ports:
     - 13443:3443
-  network_mode: "host"
+  #network_mode: "host"
